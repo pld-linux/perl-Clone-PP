@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Clone
 %define	pnam	PP
 Summary:	Clone::PP - Recursively copy Perl datatypes
