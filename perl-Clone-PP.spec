@@ -1,24 +1,23 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define	pdir	Clone
 %define	pnam	PP
-Summary:	Clone::PP - Recursively copy Perl datatypes
-#Summary(pl.UTF-8):	
+Summary:	Clone::PP - recursively copy Perl datatypes
+Summary(pl.UTF-8):	Clone::PP - rekurencyjne kopiowanie perlowych typów danych
 Name:		perl-Clone-PP
-Version:	1.07
+Version:	1.08
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Clone/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	d401b88f44e98fa0d984da7c7b6a4cd1
-URL:		http://search.cpan.org/dist/Clone-PP/
+# Source0-md5:	62f9547aec61768af85b00bd2c3e5547
+URL:		https://metacpan.org/dist/Clone-PP
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{with tests}
-%endif
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,8 +27,11 @@ copies of Perl data structures. It calls itself recursively to copy
 nested hash, array, scalar and reference types, including tied
 variables and objects.
 
-# %description -l pl.UTF-8
-# TODO
+%description -l pl.UTF-8
+Ten moduł udostępnia funkcję ogólnego przeznaczenia clone, wykonującą
+głęboką kopię perlowych struktur danych. Wywołuje sama siebie
+rekurencyjnie, aby skopiować zagnieżdżone hasze, tablice, skalary i
+referencje, w tym dowiązane zmienne i obiekty.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -52,6 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%{perl_vendorlib}/Clone/*.pm
-%{_mandir}/man3/*
+%doc Changes
+%{perl_vendorlib}/Clone/PP.pm
+%{_mandir}/man3/Clone::PP.3pm*
