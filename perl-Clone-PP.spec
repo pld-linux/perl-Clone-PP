@@ -7,13 +7,13 @@
 Summary:	Clone::PP - recursively copy Perl datatypes
 Summary(pl.UTF-8):	Clone::PP - rekurencyjne kopiowanie perlowych typów danych
 Name:		perl-Clone-PP
-Version:	1.08
+Version:	1.09
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Clone/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	62f9547aec61768af85b00bd2c3e5547
+Source0:	https://www.cpan.org/modules/by-authors/id/N/NE/NEILB/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	9eb946f2707c8462745f618cc18d5f62
 URL:		https://metacpan.org/dist/Clone-PP
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
